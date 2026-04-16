@@ -1,3 +1,23 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://flickdm.github.io/'
 locale = 'en-us'
-title = 'My New Hugo Project'
+title = "Doug's Blog"
+theme = 'terminal'
+
+[params]
+  CenterTheme = true
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+  
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+
+  [[menu.main]]
+    identifier = "speaking"
+    name = "Speaking"
+    url = "/speaking/"
