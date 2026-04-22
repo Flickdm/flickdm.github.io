@@ -5,6 +5,7 @@ theme = 'terminal'
 
 [params]
   CenterTheme = true
+  ReadMore = "Read More"
 
 [caches]
   [caches.images]
@@ -20,3 +21,8 @@ theme = 'terminal'
     identifier = "posts"
     name = "Posts"
     url = "/posts/"
+
+  [[menu.main]]
+    identifier = "reading"
+    name = "Reading List"
+    url = "/reading/"
