@@ -14,15 +14,24 @@ theme = 'terminal'
 [menu]
   [[menu.main]]
     identifier = "about"
+    weight = 1
     name = "About"
     url = "/about/"
 
   [[menu.main]]
     identifier = "posts"
+    weight = 2
     name = "Posts"
     url = "/posts/"
 
   [[menu.main]]
     identifier = "reading"
+    weight = 3
     name = "Reading List"
     url = "/reading/"
+
+  [[menu.main]]
+    identifier = "dev_setup"
+    weight = 4
+    name = "Dev Setup"
+    url = "/dev_setup/"
