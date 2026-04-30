@@ -31,10 +31,13 @@ date: 2026-04-27
     autoStash = true
 [merge]
     conflictstyle = diff3
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [alias]
     c = "commit --signoff"
     amend = "commit --amend --no-edit"
-    nah = "git reset --hard && git clean -df"
+    nah = "!f() {\n  printf \"This will discard all local changes, including submodules. Confirm (Y/n): \";\n  read -r reply;\n  case \"$reply\" in\n    \"\"|[Yy]|[Yy][Ee][Ss]) ;;\n    *) echo \"Aborted.\"; return 1;;\n  esac;\n  git reset --hard &&\n  git clean -df &&\n  git submodule sync --recursive &&\n  git submodule update --init --recursive --force &&\n  git submodule foreach --recursive 'git reset --hard && git clean -df';\n}; f"
     update = "pull --rebase origin main"
     uncommit = "reset --soft HEAD~1"
     last-touch = "log -1 --oneline --"
